@@ -1,0 +1,11 @@
+commit 5a6bc777d331e401bda1638e357d56e89d9f5bfa
+Author: TemoLomidze <temo@lomidze.ge>
+Date:   Wed Aug 4 21:01:04 2021 +0400
+
+    gitignore
+
+commit c004c55aae4324d18b1cf359bc39e78b43d34300
+Author: TemoLomidze <temo@lomidze.ge>
+Date:   Wed Aug 4 20:06:19 2021 +0400
+
+    readme
