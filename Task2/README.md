@@ -7,4 +7,6 @@
 7. Created both instances again.
 8. Checked with connections between VM's (passed)
 9. Results screenshots can be found at https://github.com/TemoLomidze/devopsintern/tree/master/Task2
-
+10. Installed apache.
+11. Checked accessebility of created webpage.
+12. Checked availability from ubuntu with wget and curl
