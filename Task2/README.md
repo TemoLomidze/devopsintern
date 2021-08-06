@@ -12,5 +12,6 @@
 12. Checked availability from ubuntu with wget and curl
 13. Commection through SSH established in both directions
 14. page available at http://18.191.93.145/ or http://ec2-18-191-93-145.us-east-2.compute.amazonaws.com/
-15. Created new instance for bash script job.
-16. page available at http://18.189.188.117/ or http://ec2-18-189-188-117.us-east-2.compute.amazonaws.com/
+15. Created new instance with different VPC for bash script job.
+16. page available at http://3.134.78.182/ or http://ec2-3-134-78-182.us-east-2.compute.amazonaws.com/
+17. uploaded Screenshots, that prove connection between instances in VPC1 and VPC2
