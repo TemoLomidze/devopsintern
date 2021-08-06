@@ -10,3 +10,5 @@
 10. Installed apache.
 11. Checked accessebility of created webpage.
 12. Checked availability from ubuntu with wget and curl
+13. Commection through SSH established in both directions
+
