@@ -13,6 +13,7 @@
 
 3. Created Dockerfile on clean AWS Ubuntu instance, that installes Apache2, with ENV DEVOPS=<username>
 
+4. Pushed Docker Image to my Docker Hub.
 
 
 
