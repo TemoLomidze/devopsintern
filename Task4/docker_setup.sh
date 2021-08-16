@@ -1,48 +1,32 @@
 #!/bin/bash
 
-#Prepare system
-yum -y install epel-release
+#update system
+sudo apt -y update
 
-yum -y update
+#install prerequisites
+sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
 
-yum clean all
+#add GPG Key for Docker Repository
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-#Remove any old Docker Engine if exists
-yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
+#add repository
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-#Prepare Docker Repositories
+#refresh packeges again
+sudo apt -y update
 
-yum install -y yum-utils mc nano
+#install docker
+sudo apt -y install docker-ce docker-ce-cli containerd.io
 
-yum-config-manager \
-    --add-repo \
-    https://download.docker.com/linux/centos/docker-ce.repo
+#start && enable docker service
+sudo systemctl start docker
+sudo systemctl enable docker
 
-#Install Docker CE
-yum -y install docker-ce docker-ce-cli containerd.io
+#check docker version
+sudo docker --version
 
-#Start & Enable Docker Ce Service
-systemctl start docker
-systemctl start containerd.service
+#install compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-systemctl enable docker
-systemctl enable containerd.service
-
-#Install Docker Composer
-curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-#Make it executable
-chmod +x /usr/local/bin/docker-compose
-
-#Check Composer Works
-docker-compose --version
-
-#Verify that Docker Engine is installed correctly by running the hello-world image
-docker run hello-world
+#give executable permissions
+sudo chmod +x /usr/local/bin/docker-compose
