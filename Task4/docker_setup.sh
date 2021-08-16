@@ -15,6 +15,9 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 #refresh packeges again
 sudo apt -y update
 
+#Check where from docker installing
+apt-cache policy docker-ce
+
 #install docker
 sudo apt -y install docker-ce docker-ce-cli containerd.io
 
@@ -25,8 +28,15 @@ sudo systemctl enable docker
 #check docker version
 sudo docker --version
 
+#User
+sudo usermod -aG docker $USER
+
 #install compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 #give executable permissions
 sudo chmod +x /usr/local/bin/docker-compose
+
+#Download and use Hello Worlds
+sudo docker run hello-world
+

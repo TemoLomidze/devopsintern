@@ -1,21 +1,13 @@
-FROM centos:v7
+FROM ubuntu:16.04
 
 MAINTAINER Temo Lomidze <temo@lomidze.ge>
 
+ENV DEVOPS "darkhalf"
 
-RUN yum -y install httpd php
+RUN apt -y update && apt -y install \
+	apache2 \
+	&& echo "<html><h1>Temo Lomidze Sandbox2021</h1><html>" > /var/www/html/index.html \
 
-RUN echo "<h1>Hello Wolrd</h1>" > /var/www/html/index.html
-
-RUN systemctl start httpd
-
-RUN systemctl enable httpd
+CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
 
 EXPOSE 80
-
-VOLUME /mnt/docker_vol  /data
-
-RUN echo "httpd" >> /root/.bashrc
-
-CMD ["/bin/bash"]
-
