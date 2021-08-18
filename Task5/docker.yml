@@ -1,0 +1,38 @@
+#My Second playbook
+
+---
+- name: "Install docker"
+  hosts: guest_rhel
+  become: yes
+  tasks:
+    - name: Update all
+      yum:
+        name: '*'
+        state: latest
+        update_only: yes
+
+    - name: Check if needed packages are installed
+      yum:
+        name: "{{ packages }}"
+        state: latest
+        update_cache: yes
+      vars:
+        packages:
+        - python-pip
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+        - amazon-linux-extras
+
+    - name: Add extras repository
+      shell: yum-config-manager --enable extras
+
+    - name: Install docker-ce (centos) via amazon-linux-extras packages
+      shell: "amazon-linux-extras install docker=latest -y"
+
+    - name: Enable Docker CE service at startup
+      service:
+        name: docker
+        state: started
+        enabled: yes
+

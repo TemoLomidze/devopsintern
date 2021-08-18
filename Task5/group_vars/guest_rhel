@@ -1,0 +1,8 @@
+---
+ansible_user                    : ec2-user
+ansible_ssh_private_key_file    : /home/ec2-user/.ssh/east1-1.pem
+environment                     : LEARN_ANSIBLE
+owner                           : "Temo Lomidze"
+
+
+
