@@ -1,2 +1,2 @@
- <font size=20> Task 5 - Main Part </font>
+ <font size=50> Task 5 - Main Part </font>
  
