@@ -14,4 +14,10 @@ Also We had to create ansible config file, because installation method I used to
 
 ![alt tag](https://for-git.s3.amazonaws.com/Task5/ansible.cfg.png)
 
-and to get access to guest vm's we need to give ansible path to keys. It can be done by creating variables folder > group_vars
+and to get access to guest vm's we need to give ansible user credenthials and path to keys. It can be done by creating variables folder > group_vars and file with the same name as a group name in Inventory file. In my case guest_rhel, in which we write all the necessary credentials:
+
+![alt tag](https://for-git.s3.amazonaws.com/Task5/group_vars.png)
+
+and then run easy test of connection using `ansible all -m ping`
+
+![alt tag](https://for-git.s3.amazonaws.com/Task5/ping.png)
