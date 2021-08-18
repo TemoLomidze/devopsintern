@@ -8,11 +8,11 @@ after that we had to install Ansible on control-plane (in my case: Master). I've
 
 2. To be able to start using ansible, I had to create Inventory File, where I put all my vm's except Master.
 
-![alt tag](Task5/screenshots/guests.txt.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/d2c928aceb571727c011814c4b89a4a530a81fce/Task5/screenshots/guests.txt.png)
 
 Also We had to create ansible config file, because installation method I used to install Ansible, does not creating configuration file.
 
-![alt tag](Task5/screenshots/ansible.cfg.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/c9da2107f6b2d111b0702baedde64f40d9bf267d/Task5/screenshots/ansible.cfg.png)
 
 and to get access to guest vm's we need to give ansible user credenthials and path to keys. It can be done by creating variables folder > group_vars and file with the same name as a group name in Inventory file. In my case guest_rhel, in which we write all the necessary credentials:
 
