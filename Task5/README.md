@@ -21,3 +21,7 @@ and to get access to guest vm's we need to give ansible user credenthials and pa
 and then run easy test of connection using `ansible all -m ping`
 
 ![alt tag](https://for-git.s3.amazonaws.com/Task5/ping.png)
+
+After that, we had to create playbook to install docker on guest machines. Playbook file `docker.yml` is uploaded to Task5 folder. The result of running playbook using `ansible-playbook docker.yml` below:
+
+![alt tag](https://for-git.s3.amazonaws.com/Task5/docker.png)
