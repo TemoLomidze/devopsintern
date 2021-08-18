@@ -16,12 +16,12 @@ Also We had to create ansible config file, because installation method I used to
 
 and to get access to guest vm's we need to give ansible user credenthials and path to keys. It can be done by creating variables folder > group_vars and file with the same name as a group name in Inventory file. In my case guest_rhel, in which we write all the necessary credentials:
 
-![alt tag](https://for-git.s3.amazonaws.com/Task5/group_vars.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/group_vars.png)
 
 and then run easy test of connection using `ansible all -m ping`
 
-![alt tag](https://for-git.s3.amazonaws.com/Task5/ping.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/ping.png)
 
 After that, we had to create playbook to install docker on guest machines. Playbook file `docker.yml` is uploaded to Task5 folder. The result of running playbook using `ansible-playbook docker.yml` below:
 
-![alt tag](https://for-git.s3.amazonaws.com/Task5/docker.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/docker.png)
