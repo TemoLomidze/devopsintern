@@ -2,7 +2,7 @@
 
 1. We had to deploy 3 virtual machines on any cloud. I've used AWS Management console to deploy 3 EC2 instances of Amazon linux 2.
 
-![alt tag](https://for-git.s3.amazonaws.com/Task5/instances.png)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/f6a17a61a9d796bc7bf5c7647a2b5e3059698864/Task5/screenshots/instances.png)
 
 after that we had to install Ansible on control-plane (in my case: Master). I've installed latest python version and used pip3: `sudo pip3 install ansible`
 
