@@ -1,0 +1,10 @@
+---
+
+- name: Test Connection to guests
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Ping guests
+    ping:
