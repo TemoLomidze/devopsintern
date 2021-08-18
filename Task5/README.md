@@ -22,6 +22,6 @@ and then run easy test of connection using `ansible all -m ping`
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/ping.png)
 
-After that, we had to create playbook to install docker on guest machines. Playbook file `docker.yml` is uploaded to Task5 folder. The result of running playbook using `ansible-playbook docker.yml` below:
+3. After that, we had to create playbook to install docker on guest machines. Playbook file `docker.yml` is uploaded to Task5 folder. The result of running playbook using `ansible-playbook docker.yml` below:
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/docker.png)
