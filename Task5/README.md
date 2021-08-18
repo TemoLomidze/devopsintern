@@ -5,4 +5,4 @@
 
 after that we had to install Ansible on control-plane (in my case: Master). I've installed latest python version and used pip3: `sudo pip3 install ansible`
 
-2. To be able to start using ansible, I had to create ###Inventory File
+2. To be able to start using ansible, I had to create ### Inventory File
