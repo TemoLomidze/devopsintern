@@ -18,7 +18,7 @@ and to get access to guest vm's we need to give ansible user credenthials and pa
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/group_vars.png)
 
-and then run easy test of connection using `ansible all -m ping`
+and then run simple test of connection using `ansible all -m ping`
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/7e8f92779a32acaba6afdc4a9fb81c8fe4f3bb25/Task5/screenshots/ping.png)
 
