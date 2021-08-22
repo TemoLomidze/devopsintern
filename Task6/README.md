@@ -51,7 +51,13 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   jenkins-temo:1.1`
+  
 If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
 First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/unlock-jenkins-page.jpg)
+
+There is a help text, how to find one-time password. But that does not work for us, because we ran jenkins from docker container. We have to run docker command to get password:
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/onetimepass.png)
+
