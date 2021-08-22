@@ -14,6 +14,7 @@ and restart docker service (if restart service does not help, then we have to `l
 
  After installation is complete, We need to create bridge netrwork in Docker using `docker network create jenkins`
   In order to execute Docker commands inside Jenkins nodes, download and run the docker:dind Docker image using the following `docker run` command (I followed the perfect guide with detailed explanations on jenknis webpage):
+  
 `docker run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
   --env DOCKER_TLS_CERTDIR=/certs \
@@ -22,7 +23,7 @@ and restart docker service (if restart service does not help, then we have to `l
   --publish 2376:2376 docker:dind --storage-driver overlay2`
   
  When done we have to create Dockerfile to build jenkins inside Docker container:
-
+ 
 `FROM jenkins/jenkins:2.289.3-lts-jdk11
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
@@ -50,7 +51,20 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   jenkins-temo:1.1`
+  
 If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
 First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/unlock-jenkins-page.jpg)
+
+
+##### There is a help text, how to find one-time password. But that does not work for us, because we ran jenkins from docker container. We have to run docker command to get password:
+to find your container ID, simply run `docker ps`.
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/onetimepass.png)
+
+##### If everyhing fine, wizzard takes to second screen to create Admnistrative account for Jenkins:
+
+![alt tag](
 
 
