@@ -7,7 +7,11 @@ Jenkins is a free and open source automation server. It helps automate the parts
 
 ### 1.
  I had install jenkins in a Docker container. For that I setup AWS EC2 instance with ubuntu.
-First I had to prepare system: Install all prerequisites. I've created bash shell script to simplify the process. (It's in Task6 directory on Github)
+First I had to prepare system: Install all prerequisites. I've created bash shell script to simplify the process (It's in Task6 directory on Github), also it's good idea to give docker command permission to run without sudo. To do that, we have to run following command:
+#### `sudo usermod -aG docker $USER`
+and restart docker service (if restart does not help, then we have to `logout`):
+#### `sudo systemctl restart docker`
+
  After installation is complete, We need to create bridge netrwork in Docker using `docker network create jenkins`
   In order to execute Docker commands inside Jenkins nodes, download and run the docker:dind Docker image using the following `docker run` command (I followed the perfect guide with detailed explanations on jenknis webpage):
 `docker run --name jenkins-docker --rm --detach \
@@ -36,7 +40,6 @@ RUN jenkins-plugin-cli --plugins "blueocean:1.24.7 docker-workflow:1.26"`
 Now we need to build Docker image from Dockerfile and assign name to it (in my case I gave it jenkins-temo:1.1) with this command
 
 #### `docker build -t myjenkins-blueocean:1.1 .`
-
 
 
 
