@@ -53,4 +53,4 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
 If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
 First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
 
-
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/unlock-jenkins-page.jpg)
