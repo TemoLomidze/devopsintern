@@ -52,14 +52,14 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
   --volume jenkins-docker-certs:/certs/client:ro \
   jenkins-temo:1.1`
   
-If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
-First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
+#### If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
+##### First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/unlock-jenkins-page.jpg)
 
 
 ##### There is a help text, how to find one-time password. But that does not work for us, because we ran jenkins from docker container. We have to run docker command to get password:
-to find your container ID, simply run `docker ps`.
+##### to find your container ID, simply run `docker ps`.
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/onetimepass.png)
 
@@ -69,5 +69,16 @@ to find your container ID, simply run `docker ps`.
 
 ##### Here we have to enter credentials for new Admin user and then click "Save and Continue" and it takes you next screen, where we have to decide install jenkins with suggested plugins or make clean installation. I recommend to install suggested plugins, because theese plugins already tested by thousands of users. Anyway, if we don't need any of installed plugins, they can be easely uninstalled after we finish setup wizard.
 
-![alt tag](t.ly/IkfA)
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins1.png)
+
+##### The wizzard proceeds with necessary installations and takes us to new screen with some reminder of how to access jenkins and on next page we are able to start using jenkins:
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins2.png)
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins3.png)
+
+##### When we press to Start using Jenkins, it takes us to Jenkins workspace:
+
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins.png)
 
