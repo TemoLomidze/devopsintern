@@ -59,10 +59,12 @@ First time you will see screen that asks to unlock Jenkins. It's only one time s
 
 
 ##### There is a help text, how to find one-time password. But that does not work for us, because we ran jenkins from docker container. We have to run docker command to get password:
-
+to find your container ID, simply run `docker ps`.
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/onetimepass.png)
 
+##### If everyhing fine, wizzard takes to second screen to create Admnistrative account for Jenkins:
 
+![alt tag](
 
 
