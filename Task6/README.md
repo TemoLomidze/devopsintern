@@ -69,5 +69,5 @@ to find your container ID, simply run `docker ps`.
 
 ##### Here we have to enter credentials for new Admin user and then click "Save and Continue" and it takes you next screen, where we have to decide install jenkins with suggested plugins or make clean installation. I recommend to install suggested plugins, because theese plugins already tested by thousands of users. Anyway, if we don't need any of installed plugins, they can be easely uninstalled after we finish setup wizard.
 
-
+![alt tag](t.ly/IkfA)
 
