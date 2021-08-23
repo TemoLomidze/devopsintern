@@ -96,3 +96,10 @@ Click drop down button right to (global) and then "Add Credentials":
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh2.png)
 
 It take us to the next screen, where we finally can create new SSH
+
+We have to feel form here. in "Kind" select: "SSH Username with private key" from drop down menu. Also in Scope select "Global", if not selected by default.
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh3.png)
+
+In the "Private Key" Section, we have to click "Add" and copy content of previously created SSH key file, enter Passphrase and click "Ok"
+
