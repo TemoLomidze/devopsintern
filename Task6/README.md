@@ -103,3 +103,8 @@ We have to feel form here. in "Kind" select: "SSH Username with private key" fro
 
 In the "Private Key" Section, we have to click "Add" and copy content of previously created SSH key file, enter Passphrase and click "Ok"
 
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh4.png)
+
+### Our creadentials created!
+
+
