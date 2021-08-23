@@ -95,4 +95,4 @@ Click drop down button right to (global) and then "Add Credentials":
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh2.png)
 
-
+It take us to the next screen, where we finally can create new SSH
