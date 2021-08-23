@@ -86,5 +86,13 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
   ### 3
  Now it's time to deploy jenkins agents. as we are using docker version. we are going to create agents inside containers.
 First we need to create SSH key pair, usind `ssh-keygen -f ~/.ssh/your-key-name` command.
-Now, when key is ready, we have to go to Jenkins Dashboard, then Manage Jenkins and then Manage Credentials.
+Now, when key is ready, we have to go to Jenkins Dashboard, then Manage Jenkins and then Click Manage Credentials.
  
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh1.png)
+
+It takes us to credentials manager page, where we can add/delete/manage ssh keys.
+Click drop down button right to (global) and then "Add Credentials":
+
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh2.png)
+
+
