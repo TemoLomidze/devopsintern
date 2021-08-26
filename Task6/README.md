@@ -5,7 +5,7 @@ What we know about Jenkins?
 
 Jenkins is a free and open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. It can be used from just copying files to destination, to compile code from github and push it to production server...
 
-### 1.
+## 1 and 2
  I had install jenkins in a Docker container. For that I setup AWS EC2 instance with ubuntu.
 First I had to prepare system: Install all prerequisites. I've created bash shell script to simplify the process (It's in Task6 directory on Github), also it's good idea to give docker command permission to run without sudo. To do that, we have to run following command:
 #### `sudo usermod -aG docker $USER`
@@ -138,6 +138,7 @@ don't forget to use different label, while adding **Docker template** on second 
 <br>
    ## 4
 ##### We have Create a Freestyle project. Which will show the current date as a result of execution.
+<br>
 For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
 
 It's time to start our first Freestile project. It will show current time and date as a result. Click **New Item** select **Freestyle Project** (here we need plugin that we installed at the begining "Lable"), check **Restrict where this project can be run** and in **Label Expression** write your agent **label**.
@@ -150,3 +151,11 @@ Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timedate.png)
 <br>
    ## 5
+  #### The task is to Create Pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
+<br>
+Before we start we need to prepare agents. Go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Edit Docker** and add the following line in settings tab:
+`type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock`
+This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands `sudo chmod 777 /var/run/docker.sock`.
+<br>
+Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**
+
