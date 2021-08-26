@@ -76,8 +76,6 @@ docker run --name jenkins-blueocean --rm --detach \
 
 ##### The wizzard proceeds with necessary installations and takes us to new screen with some reminder of how to access jenkins and on next page we are able to start using jenkins:
 
-![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins2.png)
-
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins3.png)
 
 ##### When we press to Start using Jenkins, it takes us to Jenkins workspace:
@@ -111,8 +109,11 @@ In the <strong>"Private Key"</strong> Section, we have to click "Add" and copy c
 <br>
 #### It's time to configure build Agents.
 
-I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents. We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
+I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents.
 
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/vms.png)
+<br>
+We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
 
 
 
