@@ -127,6 +127,11 @@ Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and cl
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/addcloud.png)
 and start configuring your cloud:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/confcloud.png)
-In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**
+In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**. If you get answer like this: **Version = 20.10.8, API Version = 1.41**, then everything goes well at the moment.
+Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials.
+<br>
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
+
+
 
 
