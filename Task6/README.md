@@ -6,7 +6,7 @@ What we know about Jenkins?
 Jenkins is a free and open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. It can be used from just copying files to destination, to compile code from github and push it to production server...
 
 ## 1 and 2
- I had install jenkins in a Docker container. For that I setup AWS EC2 instance with ubuntu.
+ I had install jenkins in a Docker container. For that I created Virtual Machine with Ubuntu 18.04 in VMWare Workstation.
 First I had to prepare system: Install all prerequisites. I've created bash shell script to simplify the process (It's in Task6 directory on Github), also it's good idea to give docker command permission to run without sudo. To do that, we have to run following command:
 #### `sudo usermod -aG docker $USER`
 and restart docker service (if restart service does not help, then we have to `logout`):
