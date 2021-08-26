@@ -125,4 +125,8 @@ Now we have to install **docker** and **label** plugins into Jenkins. We will ne
 <br>
 Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and click **add new cloud** in drop down menu you will find **Docker**.
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/addcloud.png)
+and start configuring your cloud:
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/confcloud.png)
+In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**
+
 
