@@ -121,3 +121,4 @@ We have to make some changes in <strong>/lib/systemd/system/docker.service</stro
 To check everythin works correct, use `curl localhost:yourporthere/version`. You should get output like this:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/curl-local.png)
 <br>
+Now we have to install **docker** and **label** plugins into Jenkins.
