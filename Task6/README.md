@@ -121,4 +121,6 @@ We have to make some changes in <strong>/lib/systemd/system/docker.service</stro
 To check everythin works correct, use `curl localhost:yourporthere/version`. You should get output like this:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/curl-local.png)
 <br>
-Now we have to install **docker** and **label** plugins into Jenkins.
+Now we have to install **docker** and **label** plugins into Jenkins. We will need it to build agents directly from Jenkins. For sure make installation of plugins with **restart**.
+<br>
+Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and click **add new cloud** in drop down menu you will find **Docker**.
