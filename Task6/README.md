@@ -17,7 +17,7 @@ and restart docker service (if restart service does not help, then we have to `l
 
  After installation is complete, We need to create bridge netrwork in Docker using `docker network create jenkins`
   
-  In order to execute Docker commands inside Jenkins nodes, download and run the docker:dind Docker image using the following `docker run` command (I followed the perfect guide with detailed explanations on jenknis webpage):
+  In order to execute Docker commands inside Jenkins nodes, download and run the ***docker:dind*** Docker image using the following `docker run` command (I followed the perfect guide with detailed explanations on jenknis webpage):
 ```  
 docker run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
