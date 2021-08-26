@@ -169,6 +169,6 @@ In case if we did everything right console output should be like this:
   #### Create Pipeline, which will build artefact using Dockerfile directly from your github repo
 <br>  
 We can create new pipeline or edit already existed to finish this task. Go to your pipeline and add following script to it, which gonna build Dockerfile from our github repo (do not forget to replace with your repo).
-<br>
+
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/6.docker.png)
-<br>
+
