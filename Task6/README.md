@@ -158,7 +158,9 @@ Before we start we need to prepare agents. Go to **Manage Jenkins > Manage Nodes
 This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands `sudo chmod 777 /var/run/docker.sock`.
 <br>
 Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**, add following script:
-
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ps-pipe.png)
+<br>
+In case if we did everything right console output should be like this:
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-ps-a.png)
 
 
