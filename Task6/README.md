@@ -76,8 +76,6 @@ docker run --name jenkins-blueocean --rm --detach \
 
 ##### The wizzard proceeds with necessary installations and takes us to new screen with some reminder of how to access jenkins and on next page we are able to start using jenkins:
 
-![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins2.png)
-
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins3.png)
 
 ##### When we press to Start using Jenkins, it takes us to Jenkins workspace:
