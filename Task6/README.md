@@ -24,7 +24,7 @@ docker run --name jenkins-docker --rm --detach \
   --publish 2376:2376 docker:dind --storage-driver overlay2
   
  When done we have to create Dockerfile to build jenkins inside Docker container:
- 
+```
 FROM jenkins/jenkins:2.289.3-lts-jdk11
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
@@ -38,7 +38,7 @@ RUN add-apt-repository \
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean:1.24.7 docker-workflow:1.26"
-
+```
 Now we need to build Docker image from Dockerfile and assign name to it (in my case I gave it jenkins-temo:1.1) with this command
 
 #### `docker build -t jenkins-temo:1.1 .`
