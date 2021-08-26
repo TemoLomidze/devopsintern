@@ -45,13 +45,13 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
 
  After building is complete, we have to run own container with the following `docker run` command:
 
-`docker run --name jenkins-blueocean --rm --detach \
+<p>`docker run --name jenkins-blueocean --rm --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
   --publish 8080:8080 --publish 50000:50000 \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
-  jenkins-temo:1.1`
+  jenkins-temo:1.1`</p>
   
 #### If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
 ##### First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
@@ -106,7 +106,7 @@ In the <strong>"Private Key"</strong> Section, we have to click "Add" and copy c
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh4.png)
 
 ### Our creadentials created!
-<br><br>
+<br>
 #### It's time to configure build Agents.
 
 I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents. We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
