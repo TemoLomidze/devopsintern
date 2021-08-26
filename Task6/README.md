@@ -10,6 +10,7 @@ Jenkins is a free and open source automation server. It helps automate the parts
 <br>
  I had install jenkins in a Docker container. For that I created Virtual Machine with Ubuntu 18.04 in VMWare Workstation.
 First I had to prepare system: Install all prerequisites. I've created bash shell script to simplify the process (It's in Task6 directory on Github), also it's good idea to give docker command permission to run without sudo. To do that, we have to run following command:
+
 #### `sudo usermod -aG docker $USER`
 and restart docker service (if restart service does not help, then we have to `logout`):
 #### `sudo systemctl restart docker`
