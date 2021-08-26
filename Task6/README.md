@@ -16,16 +16,16 @@ and restart docker service (if restart service does not help, then we have to `l
   
   In order to execute Docker commands inside Jenkins nodes, download and run the docker:dind Docker image using the following `docker run` command (I followed the perfect guide with detailed explanations on jenknis webpage):
   
-`docker run --name jenkins-docker --rm --detach \
+docker run --name jenkins-docker --rm --detach \
   --privileged --network jenkins --network-alias docker \
   --env DOCKER_TLS_CERTDIR=/certs \
   --volume jenkins-docker-certs:/certs/client \
   --volume jenkins-data:/var/jenkins_home \
-  --publish 2376:2376 docker:dind --storage-driver overlay2`
+  --publish 2376:2376 docker:dind --storage-driver overlay2
   
  When done we have to create Dockerfile to build jenkins inside Docker container:
  
-`FROM jenkins/jenkins:2.289.3-lts-jdk11
+FROM jenkins/jenkins:2.289.3-lts-jdk11
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
        ca-certificates curl gnupg2 \
@@ -37,7 +37,7 @@ RUN add-apt-repository \
        $(lsb_release -cs) stable"
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
-RUN jenkins-plugin-cli --plugins "blueocean:1.24.7 docker-workflow:1.26"`
+RUN jenkins-plugin-cli --plugins "blueocean:1.24.7 docker-workflow:1.26"
 
 Now we need to build Docker image from Dockerfile and assign name to it (in my case I gave it jenkins-temo:1.1) with this command
 
@@ -45,7 +45,7 @@ Now we need to build Docker image from Dockerfile and assign name to it (in my c
 
  After building is complete, we have to run own container with the following `docker run` command:
 
-'''
+
 docker run --name jenkins-blueocean --rm --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
@@ -53,7 +53,7 @@ docker run --name jenkins-blueocean --rm --detach \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   jenkins-temo:1.1
-'''
+
 
 #### If it's finishes successfully, we continue to post-installation setup wizzard using your favorite brawser: https://your.server.ip:8080
 ##### First time you will see screen that asks to unlock Jenkins. It's only one time setup feature.
