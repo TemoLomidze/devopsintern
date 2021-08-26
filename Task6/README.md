@@ -177,3 +177,6 @@ We can create new pipeline or edit already existed to finish this task. Go to yo
 
 For this part, we have have to go to: ***Manage Jenkins > Manage Credentials*** and add Global credentials in ***Secret Text*** format. Provided password is ***QWERTY!***.
 Then we create pipeline as in example:
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/password.png)
+
+
