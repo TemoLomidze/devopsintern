@@ -109,8 +109,8 @@ In the <strong>"Private Key"</strong> Section, we have to click "Add" and copy c
 <br>
 #### It's time to configure build Agents.
 
-I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents. We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
-
+I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents. We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.<br>
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/vms.png)
 
 
 
