@@ -141,6 +141,8 @@ don't forget to use different label, while adding **Docker template** on second 
 For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
 
 It's time to start our first Freestile project. It will show current time and date as a result. Click **New Item** select **Freestyle Project** (here we need plugin that we installed at the begining "Lable"), check **Restrict where this project can be run** and in **Label Expression** white your agent **label**.
-![alt tag](
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timestamp.png)
+
+
 
 
