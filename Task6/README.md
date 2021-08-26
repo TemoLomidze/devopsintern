@@ -109,7 +109,7 @@ In the "Private Key" Section, we have to click "Add" and copy content of previou
 
 #### It's time to configure build Agents.
 
-We will use the "docker-ssh-agent" image to create the agent containers.
+We will use the <strong>docker-ssh-agent</strong> image to create the agent containers.
 
 ##### docker run -d --rm --name=agent1 -p 22:22 \
 ##### -e "JENKINS_AGENT_SSH_PUBKEY=[your-public-key]" \
