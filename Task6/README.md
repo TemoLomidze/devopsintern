@@ -114,6 +114,7 @@ I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Dock
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/vms.png)
 <br>
 We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
+
 **Important!** Do not forget comment old entry of **ExecStart=**
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-service.png)
 <br>
