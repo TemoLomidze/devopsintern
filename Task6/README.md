@@ -146,8 +146,6 @@ It's time to start our first Freestile project. It will show current time and da
 <br>
 Select **Execute shell** and write simple code: `echo "$BUILD_TIMESTAMP"`
 Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output should be like this:
-
-
-
-
-
+<br>
+![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timedate.png)
+<br>
