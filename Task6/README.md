@@ -168,30 +168,7 @@ In case if we did everything right console output should be like this:
    ## 6
   #### Create Pipeline, which will build artefact using Dockerfile directly from your github repo
 <br>  
-We can create new pipeline or edit already existed to finish this task. Go to your pipeline and add following script to it, which gonna build Dockerfile from our github repo.
+We can create new pipeline or edit already existed to finish this task. Go to your pipeline and add following script to it, which gonna build Dockerfile from our github repo (do not forget to replace with your repo).
 <br>
-pipeline {
-    agent any 
-    
-    stages {
-        stage('Docker Test') {
-            steps {
-                sh 'whoami'
-                sh 'ls -la /var/run/docker.sock'
-                sh 'docker ps -a'
-            }
-        }
-        stage('Git Clone') {
-            steps {
-                sh 'git clone https://github.com/TemoLomidze/devopsintern.git'
-                sh 'ls -l devopsintern/Task4'
-            }
-        }
-        stage('Build Dockerfile') {
-            steps {
-                sh 'docker build -t temolomidze/apache ./devopsintern/Task4/'
-            }
-        }
-    }
-}
+![atl tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/6.docker.png)
 <br>
