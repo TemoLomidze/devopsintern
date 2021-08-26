@@ -130,7 +130,7 @@ Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and cl
 and start configuring your cloud:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/confcloud.png)
 In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**. If you get answer like this: **Version = 20.10.8, API Version = 1.41**, then everything goes well at the moment.
-Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials. **Apply** and **Save** configuration. Repeat above steps to create second **Agent**.
+Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. I've used image prevously create by Goga Samunashvili. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials. **Apply** and **Save** configuration. Repeat above steps to create second **Agent**.
 #### Important!!!
 don't forget to use different label, while adding **Docker template** on second node.
 <br>
@@ -164,5 +164,34 @@ Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**, a
 In case if we did everything right console output should be like this:
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-ps-a.png)
-
-
+<br>
+   ## 6
+  #### Create Pipeline, which will build artefact using Dockerfile directly from your github repo
+<br>  
+We can create new pipeline or edit already existed to finish this task. Go to your pipeline and add following script to it, which gonna build Dockerfile from our github repo.
+<br>
+pipeline {
+    agent any 
+    
+    stages {
+        stage('Docker Test') {
+            steps {
+                sh 'whoami'
+                sh 'ls -la /var/run/docker.sock'
+                sh 'docker ps -a'
+            }
+        }
+        stage('Git Clone') {
+            steps {
+                sh 'git clone https://github.com/TemoLomidze/devopsintern.git'
+                sh 'ls -l devopsintern/Task4'
+            }
+        }
+        stage('Build Dockerfile') {
+            steps {
+                sh 'docker build -t temolomidze/apache ./devopsintern/Task4/'
+            }
+        }
+    }
+}
+<br>
