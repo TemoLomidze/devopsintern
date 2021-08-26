@@ -101,17 +101,17 @@ We have to feel form here. in "Kind" select: "SSH Username with private key" fro
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh3.png)
 
-In the "Private Key" Section, we have to click "Add" and copy content of previously created SSH key file, enter Passphrase and click "Ok"
+In the <strong>"Private Key"</strong> Section, we have to click "Add" and copy content of previously created SSH key file, enter Passphrase and click "Ok"
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh4.png)
 
 ### Our creadentials created!
-
+<br><br>
 #### It's time to configure build Agents.
 
-We will use the <strong>docker-ssh-agent</strong> image to create the agent containers.
+I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Docker installed, to use as Jenkins Agents. We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
 
-##### docker run -d --rm --name=agent1 -p 22:22 \
-##### -e "JENKINS_AGENT_SSH_PUBKEY=[your-public-key]" \
-##### jenkins/ssh-agent:alpine
+
+
+
 
