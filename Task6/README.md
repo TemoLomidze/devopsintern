@@ -115,7 +115,8 @@ I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Dock
 <br>
 We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
 
-<strong>Important!</strong> Do not forget comment old entry of **ExecStart=**!!! The restart **daemon** and **docker.service**...
+#### Important!!!
+Do not forget comment old entry of **ExecStart=**!!! Then restart **daemon** and **docker.service**...
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-service.png)
 <br>
 To check everythin works correct, use `curl localhost:yourporthere/version`. You should get output like this:
@@ -128,7 +129,9 @@ Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and cl
 and start configuring your cloud:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/confcloud.png)
 In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**. If you get answer like this: **Version = 20.10.8, API Version = 1.41**, then everything goes well at the moment.
-Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials.
+Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials. **Apply** and **Save** configuration. Repeat above steps to create second **Agent**.
+#### Important!!!
+don't forget to use different label, while adding **Docker template**
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
 
