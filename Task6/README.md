@@ -83,7 +83,7 @@ docker run --name jenkins-blueocean --rm --detach \
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/jenkins.png)
 
-  ### 3
+  ## 3
  Now it's time to deploy jenkins agents. as we are using docker version. we are going to create agents inside containers.
 First we need to create SSH key pair, usind `ssh-keygen -f ~/.ssh/your-key-name` command.
 Now, when key is ready, we have to go to Jenkins Dashboard, then Manage Jenkins and then Click Manage Credentials.
@@ -136,7 +136,7 @@ don't forget to use different label, while adding **Docker template** on second 
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
 <br>
-### 4
+   ## 4
 ##### We have Create a Freestyle project. Which will show the current date as a result of execution.
 For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
 
@@ -149,3 +149,4 @@ Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timedate.png)
 <br>
+   ## 5
