@@ -180,8 +180,9 @@ Then we create pipeline as in example:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/password.png)
 <br>
 and the Console output should look like this:
+
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/password1.png)
 <br><br>
- #### That's all Flaks ;)
+ #### That's all Falks ;)
 
 
