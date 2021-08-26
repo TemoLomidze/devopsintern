@@ -115,8 +115,9 @@ I created two <strong>Ubuntu 18.04 VM's in VMWare workstation</strong> with Dock
 <br>
 We have to make some changes in <strong>/lib/systemd/system/docker.service</strong>, to communicate with Jenkins Master freely.
 
-#### Important!!!
-Do not forget comment old entry of **ExecStart=**!!! Then restart **daemon** and **docker.service**...
+#### Important!!! Do not forget comment old entry of **ExecStart=**!!!
+Then restart **daemon** and **docker.service**...
+<br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-service.png)
 <br>
 To check everythin works correct, use `curl localhost:yourporthere/version`. You should get output like this:
@@ -131,10 +132,15 @@ and start configuring your cloud:
 In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**. If you get answer like this: **Version = 20.10.8, API Version = 1.41**, then everything goes well at the moment.
 Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials. **Apply** and **Save** configuration. Repeat above steps to create second **Agent**.
 #### Important!!!
-don't forget to use different label, while adding **Docker template**
+don't forget to use different label, while adding **Docker template** on second node.
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
+<br>
+### 4
+##### We have Create a Freestyle project. Which will show the current date as a result of execution.
+For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
 
-
+It's time to start our first Freestile project. It will show current time and date as a result. Click **New Item** select **Freestyle Project** (here we need plugin that we installed at the begining "Lable"), check **Restrict where this project can be run** and in **Label Expression** white your agent **label**.
+![alt tag](
 
 
