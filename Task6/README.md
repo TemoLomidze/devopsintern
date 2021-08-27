@@ -139,7 +139,7 @@ don't forget to use different label, while adding **Docker template** on second 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
 <br>
    ## 4
-##### We have Create a Freestyle project. Which will show the current date as a result of execution.
+##### We have to Create a Freestyle project. Which will show the current date as a result of execution.
 <br>
 For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
 
@@ -157,10 +157,11 @@ Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output
 <br>
 Before we start we need to prepare agents. Go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Edit Docker** and add the following line in settings tab:
 `type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock`
-This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands `sudo chmod 777 /var/run/docker.sock`.
+This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands:
+`sudo chmod 777 /var/run/docker.sock`.
 <br>
 Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**, add following script:
-
+<br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ps-pipe.png)
 <br>
 In case if we did everything right console output should be like this:
