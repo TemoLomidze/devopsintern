@@ -128,12 +128,17 @@ To check everythin works correct, use `curl localhost:yourporthere/version`. You
 Now we have to install **docker** and **label** plugins into Jenkins. We will need it to build agents directly from Jenkins. For sure make installation of plugins with **restart**.
 <br>
 Now go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds** and click **add new cloud** in drop down menu you will find **Docker**.
+
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/addcloud.png)
+
 and start configuring your cloud:
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/confcloud.png)
+
 In Docker Host URI, write you **agent** IP with port you mention in service file for Docker API. Then click **Test Connection**. If you get answer like this: **Version = 20.10.8, API Version = 1.41**, then everything goes well at the moment.
 Click **Docker Agent Templates > Add Docker Template**. Add Label, in my case I named it **"Slave1"** and check **Enabled** checkbox. Under Docker images type the image you want to use, Jenkins and Java must be preinstalled in the image. I've used image prevously create by Goga Samunashvili. In **Connect Method"** choose **Connect with SSH** and under **SSH Key** select **Use configured SSH credentials** and add new credentials. **Apply** and **Save** configuration. Repeat above steps to create second **Agent**.
+<br>
 #### Important!!!
+<br> 
 don't forget to use different label, while adding **Docker template** on second node.
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
@@ -142,9 +147,9 @@ don't forget to use different label, while adding **Docker template** on second 
 ##### We have to Create a Freestyle project. Which will show the current date as a result of execution.
 <br>
 For that we need to install Jenkins plugin called: **Timestamp**, it will show our current time and date. After installing plugin go to **Configure System**, find **Build Timestamp**, enable it, if disabled. Configure for your local timezone.
-
+<br>
 It's time to start our first Freestile project. It will show current time and date as a result. Click **New Item** select **Freestyle Project** (here we need plugin that we installed at the begining "Lable"), check **Restrict where this project can be run** and in **Label Expression** write your agent **label**.
-
+<br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timestamp.png)
 <br>
 Select **Execute shell** and write simple code: `echo "$BUILD_TIMESTAMP"`
@@ -156,16 +161,19 @@ Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output
   #### The task is to Create Pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
 <br>
 Before we start we need to prepare agents. Go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Edit Docker** and add the following line in settings tab:
-`type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock`
+```
+type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock
+```
 This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands:
-`sudo chmod 777 /var/run/docker.sock`.
-<br>
+```
+sudo chmod 777 /var/run/docker.sock
+```
 Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**, add following script:
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ps-pipe.png)
 <br>
 In case if we did everything right console output should be like this:
-
+<br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-ps-a.png)
 <br>
    ## 6
