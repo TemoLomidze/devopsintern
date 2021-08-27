@@ -158,30 +158,32 @@ Select **Execute shell** and write simple code: `echo "$BUILD_TIMESTAMP"`
 Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output should be like this:
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timedate.png)
-<br>
+
 
    ## 5
   #### The task is to Create Pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
 <br>
 Before we start we need to prepare agents. Go to **Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Edit Docker** and add the following line in settings tab:
-```
-type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock
-```
+
+`type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock`
+
 This will bind docker agents to docker engine. Go to console and SSH into the agents. Execute this commands:
-```
-sudo chmod 777 /var/run/docker.sock
-```
+
+`sudo chmod 777 /var/run/docker.sock`
+
 Now in Jenkins Home, click "New item", Select ***Pipeline*** and click **ok**, add following script:
-<br>
+
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ps-pipe.png)
-<br>
+
 In case if we did everything right console output should be like this:
-<br>
+
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/docker-ps-a.png)
-<br>
+
+
    ## 6
   #### Create Pipeline, which will build artefact using Dockerfile directly from your github repo
-<br>  
+
+
 We can create new pipeline or edit already existed to finish this task. Go to your pipeline and add following script to it, which gonna build Dockerfile from our github repo (do not forget to replace with your repo).
 
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/6.docker.png)
