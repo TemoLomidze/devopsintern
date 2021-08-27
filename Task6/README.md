@@ -143,6 +143,7 @@ don't forget to use different label, while adding **Docker template** on second 
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/ssh-cred.png)
 <br>
+
    ## 4
 ##### We have to Create a Freestyle project. Which will show the current date as a result of execution.
 <br>
@@ -157,6 +158,7 @@ Click **Apply**, then **Save** and **Build Now**. If we made no mistakes, output
 <br>
 ![alt tag](https://github.com/TemoLomidze/devopsintern/blob/master/Task6/screenshots/timedate.png)
 <br>
+
    ## 5
   #### The task is to Create Pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
 <br>
